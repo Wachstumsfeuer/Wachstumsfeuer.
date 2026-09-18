@@ -1,0 +1,4 @@
+import type { Metadata } from "next"; import { Suspense } from "react";
+import { BookBrowser } from "@/components/book-browser";
+export const metadata: Metadata = { title: "Bücher entdecken", description: "Buchempfehlungen für persönliche Entwicklung, Finanzen, Psychologie, Gewohnheiten und Unternehmertum." };
+export default function BooksPage() { return <main className="px-5 py-16 sm:py-20"><div className="mx-auto max-w-6xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#d8613b]">Deine Leseliste</p><h1 className="display mt-3 max-w-2xl text-5xl font-bold leading-none sm:text-6xl">Bücher für das, was vor dir liegt.</h1><p className="mt-6 max-w-xl text-lg leading-8 text-black/65">Ausgewählt für neue Perspektiven, praktische Impulse und langfristiges Wachstum.</p><Suspense fallback={<p className="py-12">Bücher werden geladen …</p>}><BookBrowser /></Suspense></div></main>; }
